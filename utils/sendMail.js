@@ -10,11 +10,13 @@ const sendMail = (to, subject, message) => {
   });
 
   const options = {
-    from: process.env.EMAIL_SENDER,
+    from: `"${process.env.EMAIL_SENDER}" <${process.env.EMAIL_FROM}>`,
     to,
     subject,
-    text: message,
+    html: message,
   };
+
+  console.log(process.env.EMAIL_SENDER);
 
   transporter.sendMail(options, (error, info) => {
     if (error) console.log(error);
