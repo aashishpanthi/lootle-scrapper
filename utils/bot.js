@@ -8,15 +8,14 @@ import getPrice from "./fetchPrice.js";
 
 const runBot = async () => {
   try {
-    console.log("Bot running");
     const tracks = await getAllTracks();
     const sites = await getAllSites();
 
-    tracks.map((track) => {
+    tracks.map(async (track) => {
       const { _id, url, site, demandPrice, history } = track;
-      const { priceLocation } = sites.filter((s) => s.name === site);
+      const { priceLocation } = sites.filter((s) => s.name === site)[0];
 
-      const price = getPrice(url, site, priceLocation);
+      const price = await getPrice(url, site, priceLocation);
 
       const newHistory = {
         price,

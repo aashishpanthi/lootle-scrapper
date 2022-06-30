@@ -13,8 +13,6 @@ const fetchPrice = async (url, site, priceLocation) => {
         .replace(/([$,₹])/g, "")
     );
 
-    console.log(price);
-
     if (site == "flipkart.com") {
       try {
         const { data } = await axios.get(
