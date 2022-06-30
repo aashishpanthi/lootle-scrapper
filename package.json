@@ -1,0 +1,22 @@
+{
+  "name": "lootle-scrapper",
+  "version": "1.0.0",
+  "description": "This bot keeps track of price",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Aashish Panthi",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.4.1",
+    "nodemailer": "^6.7.5"
+  }
+}
