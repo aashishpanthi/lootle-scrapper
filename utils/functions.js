@@ -4,7 +4,7 @@ import Site from "../models/SiteModel.js";
 // Get all Tracks
 export const getAllTracks = async () => {
   try {
-    const allTracks = await Track.find();
+    const allTracks = await Track.find({ informed: false });
     return allTracks;
   } catch (error) {
     console.log(error);
