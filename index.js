@@ -8,4 +8,4 @@ dotenv.config();
 //Connect database
 connectDB();
 
-setInterval(runBot, 6000);
+setInterval(runBot, 600000);
